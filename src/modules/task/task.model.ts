@@ -1,14 +1,16 @@
-import mongoose from 'mongoose';
-const { Schema, model } = mongoose;
+import { Schema, Document, model } from 'mongoose';
 
-const taskSchema = new Schema(
+export interface ITask extends Document {
+  text: string;
+  author: string;
+}
+
+const TaskSchema: Schema = new Schema(
   {
-    text: String,
-    author: String,
+    text: { type: String, required: true },
+    author: { type: String, required: true },
   },
   { timestamps: true },
 );
 
-const taskModel = model('task', taskSchema);
-
-export default taskModel;
+export default model<ITask>('Task', TaskSchema);
