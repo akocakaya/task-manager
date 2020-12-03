@@ -25,7 +25,7 @@ const bootServer = async () => {
     res.send('Hello World!');
   });
 
-  app.use('/aspi/task', task);
+  app.use('/api/task', task);
 
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
