@@ -40,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format"
+      "pre-commit": "yarn lint"
     }
   }
 }

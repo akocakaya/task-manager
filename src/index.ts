@@ -9,13 +9,10 @@ const bootServer = async () => {
   app.use(bodyParser.json());
 
   try {
-    await mongoose.connect(
-      'mongodb://localhost:27017/task-db',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      },
-    );
+    await mongoose.connect('mongodb://localhost:27017/task-db', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log('MongoDB connected');
   } catch (e) {
     throw new Error(e);
